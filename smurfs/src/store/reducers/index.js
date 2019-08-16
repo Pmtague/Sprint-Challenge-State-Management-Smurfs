@@ -5,9 +5,11 @@ import {
 }   from "../actions";
 
 const initialState = {
-    smurfs: [],
+    name: '',
+    age: '',
+    height: '',
     isLoading: false,
-    error: ""
+    id: Date.now()
   };
 
   export const smurfReducer = (state = initialState, action) => {
