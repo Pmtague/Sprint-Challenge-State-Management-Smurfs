@@ -1,21 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import Loader from "react-loader-spinner";
+// import Loader from "react-loader-spinner";
 
 import { getData } from "../store/actions";
 
 import { Smurf } from "./Smurf";
 
-export const SmurfList = props => {
+const SmurfList = props => {
   console.log("SmurfList Props", props);
 
   return (
     <div>
         <button onClick={props.getData}>
+            Load smurfs
         {props.isLoading ? (
-          <Loader type="ThreeDots" color="#aa71b5" height="15" width="100" />
+        //   <Loader type="ThreeDots" color="#aa71b5" height="15" width="100" />
+        <div>Loading</div>
         ) : (
-          "Load Smurf List"
+          "Load Smurfs!"
         )}
         </button>
         {props.smurfs &&
@@ -24,7 +26,7 @@ export const SmurfList = props => {
   );
 };
 
-const mapPropsToData = state => {
+const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
     smurfs: state.smurfs
@@ -32,6 +34,6 @@ const mapPropsToData = state => {
 };
 
 export default connect(
-  mapPropsToData,
+  mapStateToProps,
   { getData }
 )(SmurfList);

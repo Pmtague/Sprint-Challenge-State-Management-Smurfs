@@ -15,7 +15,7 @@ export const NewSmurf = () => {
         console.log("New smurf", newSmurf);
         axios
             .post("http://localhost:3333/smurfs", newSmurf)
-            .then(res => console.log(res))
+            .then(res => console.log(res.data))
             .catch(err => console.log(err.response));
 
         setNewSmurf({

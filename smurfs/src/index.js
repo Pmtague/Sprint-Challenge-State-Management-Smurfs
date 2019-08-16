@@ -9,10 +9,10 @@ import "./index.css";
 import App from "./components/App";
 import { smurfReducer } from './store/reducers';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
-export const store = createStore(smurfReducer, composeEnhancers(applyMiddleware(thunk)));
+export const store = createStore(smurfReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
 <Provider store={store}>
